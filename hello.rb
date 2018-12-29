@@ -1,6 +1,6 @@
 require 'sinatra'
 
-ips = ['localhost', '13.53.173.17']
+ips = ['54.207.38.79', '13.53.173.17']
 
 get '/hello/:name' do
   name = params['name']
@@ -31,7 +31,7 @@ get '/regions/:past?' do
 
   stops << region
 
-  if stops.size < 10
+  if stops.size < 2
     ip = ips.sample
 
     hops = `curl http://#{ip}/regions/#{stops.join ','}`
